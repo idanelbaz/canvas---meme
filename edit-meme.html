@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator - Editor</title>
+    <link rel="stylesheet" href="css/index-css.css">
+</head>
+
+<body onload="initEditor()">
+    <button onclick="openContactModal()" class="open-modal fixed"> Contact Us</button>
+    <div class="header fixed ">
+        <ul class="nav-container flex ">
+            <li>
+                <a href="index.html ">Homepage</a>
+            </li>
+            <li>
+                <a href="#about-us ">About Us</a>
+            </li>
+            <li>
+                <a onclick="openContactModal()">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <section class="editor-cont flex ">
+        <canvas class="canvas ">
+            Update your browser to enjoy canvas!
+        </canvas>
+        <div class="editor flex ">
+            <input onkeyup="draw(event) " autofocus class="text-input " type="text " placeholder="Write your text ">
+            <input class="color " type="color">
+            <button onclick="onDeleteMeme() " class="delete-meme ">Delete selected line</button>
+            <div class="choose-size ">
+                <button onclick="onPlusSize() " class="plus-size ">+</button>
+                <span class="chosenSize ">30</span>
+                <button onclick="onMinusSize() " class="minus-size ">-</button>
+            </div>
+            <div class="rtl-cont">
+                <button onclick="ltr()" class="ltr">LtR</button>
+                <button onclick="inline()" class="inline">Inline</button>
+                <button onclick="rtl()" class="rtl">RtL</button>
+            </div>
+            <select class="font-family">
+                <option value="impact">Choose font-family</option>
+                <option value="impact">impact</option>
+                <option value="courier-New">Courier New</option>
+                <option value="fantasy ">fantasy</option>
+                <option value="Times-New-Roman ">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Arial">Arial</option>
+            </select>
+            <button onclick="onAddLine() " class="addLine ">Add line</button>
+            <form class="publish" action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                <input name="img" id="imgData" type="hidden" />
+                <button type="submit">Publish</button>
+            </form>
+            <button class="save"><a class="download" href="#" onclick="onSaveCanvas(this)" download="">Download</a></button>
+            <input type="file" name="image" onchange="onFileInputChange(event)" />
+        </div>
+    </section>
+    <div class="share-container"></div>
+    <img class="img" alt="">
+
+    <div class="modal-contact ">
+        <h2>Contact Us </h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Subject</label>
+                <input type="email" class="subject" placeholder="subject">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="message" rows="3"></textarea>
+            </div>
+            <button onclick="sendMail()" type="button" class="btn btn-primary">Submit</button>
+            <button onclick="closeModalContact()" class="closeModal-contact ">close</button>
+        </form>
+    </div>
+
+
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js "></script>
+    <script src="js/controller.js "></script>
+    <script src="js/service.js "></script>
+    <script src="js/util.js "></script>
+
+</body>
+
+</html>

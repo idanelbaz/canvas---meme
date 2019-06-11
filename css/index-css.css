@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* header */
+
+.header {
+    background-color: black;
+    width: 100%;
+    top: 0;
+}
+
+.nav-container {
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8vw;
+}
+
+.nav-container li {
+    margin-left: 5vw;
+    cursor: pointer;
+    background-color: red;
+    height: 100%;
+}
+
+
+/* page-container */
+
+.page-container {
+    max-width: 90vw;
+    margin: 5% auto 0 auto;
+    flex-direction: column;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* margin-top: 5%; */
+}
+
+
+/* search */
+
+.search {
+    flex-grow: 1;
+}
+
+
+/* welcome */
+
+.welcome {
+    flex-grow: 4;
+    text-align: center;
+}
+
+.search {
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+}
+
+
+/* meme-img */
+
+.meme-img {
+    flex-grow: 12;
+    width: 100%;
+    grid-template-rows: repeat(auto-fill, 100px);
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+
+/* key-words */
+
+.key-words {
+    flex-grow: 4;
+    background-color: red;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    grid-template-rows: repeat(auto-fill, minmax(2rem, 5rem));
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+
+/* about-us */
+
+.about-us {
+    flex-grow: 5;
+}
+
+
+/* canvas */
+
+.editor-cont {
+    max-width: 60vw;
+    height: 60vh;
+    margin: 5% auto 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.canvas {
+    border: 1px solid gray;
+    flex-grow: 1;
+    max-width: 100%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    direction: ltr;
+    margin-right: 4rem;
+}
+
+.editor {
+    flex-grow: 1;
+    background-color: red;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4rem;
+    border-radius: 1rem;
+}
+
+.chosenSize {
+    background-color: white;
+}
+
+.img {
+    display: none;
+}
+
+
+/* modal-contact */
+
+.modal-contact {
+    width: 20vw;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: grey;
+    display: none;
+}
+
+
+/* modal-add */
+
+.addMeme-modal {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    border: 2px solid red;
+    background-color: gray;
+    font-family: fantasy;
+}
+
+.input-modal {
+    width: 20rem;
+}
+
+.box-moadl {
+    width: 5rem;
+    height: 7rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* helpers */
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.fixed {
+    position: fixed;
+}

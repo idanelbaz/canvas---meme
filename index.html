@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/index-css.css">
+</head>
+
+<body onload="init()">
+    <button onclick="openContactModal()" class="open-modal fixed"> Contact Us</button>
+    <div class="header fixed">
+        <ul class="nav-container flex">
+            <li>
+                <a href="index.html">Homepage</a>
+            </li>
+            <li>
+                <a href="#about-us">About Us</a>
+            </li>
+            <li>
+                <a onClick="openContactModal()">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-container flex">
+        <section class="welcome">
+            <h1>Meme Generator</h1>
+            <button onclick="openModalNewMeme()">Add your own image</button>
+            <input class="search" type="text" onkeyup="search()" placeholder="Search for memes" title="Type in meme name" autofocus>
+        </section>
+        <section class="search"></section>
+        <section class="meme-img grid">
+            <div style="background-image: url()" class="box"></div>
+        </section>
+        <section class="key-words grid"></section>
+        <section id="about-us" class="about-us"></section>
+
+    </div>
+
+
+    <div class="modal-contact ">
+        <h2>Contact Us </h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Subject</label>
+                <input type="email" class="subject" placeholder="subject">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="message" rows="3"></textarea>
+            </div>
+            <button onclick="sendMail()" type="button" class="btn btn-primary">Submit</button>
+            <button onclick="closeModalContact()" class="closeModal-contact ">close</button>
+        </form>
+    </div>
+    <div class="addMeme-modal">
+        <h2>
+            Upload your own image for Meme on!
+        </h2>
+        <input type="file" name="image" onchange="onAddMeme(event)" />
+        <input class="input-modal" type="text" placeholder="Enter keyWords for the image, ie - lion dog baby">
+        <div class="box-moadl "></div>
+        <button onclick="closeModal()" class="closeModal ">close</button>
+        <button onclick="addMemeToArr()" class="addMeme-btn ">Add&Edit</button>
+    </div>
+
+    <div class="share-containe"></div>
+
+
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js "></script>
+    <script src="js/controller.js "></script>
+    <script src="js/service.js "></script>
+    <script src="js/util.js "></script>
+
+</body>
+
+</html>
